@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multimedia Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-4">🎵 Multimedia Playlist</h1>
+
+    <h2 class="text-xl mt-8 mb-2">Audio</h2>
+    <ul class="space-y-2 mb-4">
+      <li><button onclick="playAudio('music/song1.mp3')" class="hover:underline">Play Song 1</button></li>
+      <li><button onclick="playAudio('music/song2.mp3')" class="hover:underline">Play Song 2</button></li>
+    </ul>
+    <audio id="audioPlayer" controls class="w-full mb-8 bg-gray-800 rounded-lg"></audio>
+
+    <h2 class="text-xl mb-2">Video</h2>
+    <ul class="space-y-2 mb-4">
+      <li><button onclick="playVideo('videos/video1.mp4')" class="hover:underline">Play Video 1</button></li>
+      <li><button onclick="playVideo('videos/video2.mp4')" class="hover:underline">Play Video 2</button></li>
+    </ul>
+    <video id="videoPlayer" controls class="w-full rounded-lg bg-black"></video>
+  </div>
+
+  <script>
+    function playAudio(src) {
+      const player = document.getElementById('audioPlayer');
+      player.src = src;
+      player.play();
+    }
+    function playVideo(src) {
+      const player = document.getElementById('videoPlayer');
+      player.src = src;
+      player.play();
+    }
+  </script>
+</body>
+</html>
